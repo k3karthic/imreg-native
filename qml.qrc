@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>images/connected.png</file>
+        <file>images/crossword.png</file>
+    </qresource>
+</RCC>
