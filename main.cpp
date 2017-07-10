@@ -10,7 +10,8 @@ int main(int argc, char *argv[]) {
   QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
   QGuiApplication app(argc, argv);
 
-  MXNetPredict p("model", DevType::cpu, 0);
+  MXNetPredict *p = new MXNetPredict("model", DevType::cpu, 0);
+  p->loadModel();
   CppModel model(p);
 
   QQmlApplicationEngine engine;

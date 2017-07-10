@@ -14,7 +14,7 @@ class CppModel : public QObject {
                  thumbnailSrcChanged)
   Q_PROPERTY(QStringList labels READ labels NOTIFY labelsChanged)
 public:
-  CppModel(MXNetPredict p);
+  CppModel(MXNetPredict *p);
 
   // Properties
   void setThumbnailSrc(const QString &a);
@@ -28,7 +28,7 @@ private:
   bool loading;
   QString m_thumbnailSrc;
   QStringList m_labels;
-  MXNetPredict predictor;
+  MXNetPredict *predictor;
 };
 
 #endif // CPPMODEL_HPP

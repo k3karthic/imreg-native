@@ -5,7 +5,7 @@
 // Implementation
 //
 
-CppModel::CppModel(MXNetPredict p)
+CppModel::CppModel(MXNetPredict *p)
     : predictor(p), m_thumbnailSrc("qrc:/images/connected.png"),
       m_labels(QStringList()), loading(true) {}
 
@@ -21,7 +21,7 @@ void CppModel::setThumbnailSrc(const QString &a) {
 
     MyImage im;
     auto im_data = im.processImage(aCopy);
-    auto labels = this->predictor.getPredictions(im_data, 5);
+    auto labels = this->predictor->getPredictions(im_data, 5);
 
     this->m_labels.clear();
 
